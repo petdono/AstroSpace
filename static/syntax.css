@@ -1,0 +1,118 @@
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+    border-radius: 0.75rem; /* rounded corners */
+    background: rgba(30, 30, 30, 0.8); /* VS Code dark bg w/ slight transparency */
+    backdrop-filter: blur(10px); /* blur behind */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* subtle elevation */
+    color: #d4d4d4; /* VS Code default foreground */
+}
+
+/* Inline code */
+code.hljs {
+    padding: 3px 6px;
+    border-radius: 4px;
+    background: rgba(30, 30, 30, 0.7);
+}
+
+/* Global */
+.hljs {
+    background: transparent; /* handled by pre above */
+    color: #d4d4d4;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Tokens */
+.hljs-comment,
+.hljs-quote {
+    font-style: italic;
+    color: #6a9955; /* greenish comments */
+}
+
+.hljs-keyword,
+.hljs-doctag,
+.hljs-meta .hljs-keyword {
+    color: #569cd6; /* blue keywords */
+}
+
+.hljs-type,
+.hljs-class,
+.hljs-title.class_,
+.hljs-built_in {
+    color: #4ec9b0; /* teal types */
+    font-weight: bold;
+}
+
+.hljs-function,
+.hljs-title.function_,
+.hljs-title {
+    color: #dcdcaa; /* yellow functions */
+    font-weight: bold;
+}
+
+.hljs-variable,
+.hljs-attr,
+.hljs-attribute {
+    color: #9cdcfe; /* light blue vars */
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet {
+    color: #b5cea8; /* green numbers/literals */
+}
+
+.hljs-string,
+.hljs-meta .hljs-string {
+    color: #ce9178; /* reddish strings */
+}
+
+.hljs-operator,
+.hljs-punctuation {
+    color: #d4d4d4; /* neutral operators */
+}
+
+.hljs-regexp {
+    color: #d16969; /* regex red */
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-selector-tag {
+    color: #569cd6; /* blue tags */
+}
+
+.hljs-section,
+.hljs-heading {
+    color: #dcdcaa;
+    font-weight: bold;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-deletion {
+    color: #f44747; /* bright red deletions */
+}
+
+.hljs-addition {
+    color: #b5cea8; /* green additions */
+}
+
+.hljs-change {
+    color: #d7ba7d; /* yellow-ish changes */
+}
+
+.hljs-link {
+    color: #3794ff;
+}

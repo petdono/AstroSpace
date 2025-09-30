@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head %}{% endblock %}
+{% block title %}astrospace - home{% endblock %}
+
+{% block abovespacer %}
+<script src="{{ url_for('static', filename='particles.js') }}"></script>
+<script>
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    particlesJS.load('particles-js', 'static/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+<div id="particles-js" style="width: 100%; height: 100%;"></div>
+{% endblock %}
+
+{% block content %}
+<div class="centered">
+    <div class="panel">
+        <h1 class="astrotext mainhead">Learn Hub</h1>
+    </div>
+    <div class="panel">
+        <h1 class="astrotext">Best Practices</h1>
+        <p>The following pages list the best practices. These tutorials will get you thinking about the <i>how</i> and <i>why</i>, not just the <i>what</i>.</p>
+    </div>
+</div>
+{% endblock %}

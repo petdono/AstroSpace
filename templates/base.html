@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Document{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    {% block head %}{% endblock %}
+</head>
+
+<body style="margin: 0%;">
+
+    <div class="topnav mobilescreen">
+        <h1 class="astrotext"><b style="color: #FF3F00;">astro</b>space</h1>
+        <div class="navbuttons">
+            <button class="navbutton" id="drop-open">+</button>
+        </div>
+    </div>
+    <div class="topnav mobilescreen" id="dropdownframe">
+        <div class="mobilenavbuttons">
+            <h1 class="astrotext" style="padding-top: 1.5rem;"><b style="color: #FF3F00;">astro</b>space</h1>
+            <button class="navbutton" onclick="location.href='{{ url_for('home') }}'">Home</button>
+            <button class="navbutton" onclick="location.href='{{ url_for('learn') }}'">Learn</button>
+            <button class="navbutton" onclick="location.href='{{ url_for('about') }}'">About</button>
+            <button class="navbutton" id="drop-close">back</button>
+        </div>
+    </div>
+
+
+    <div class="topnav widescreen">
+        <h1 class="astrotext"><b style="color: #FF3F00;">astro</b>space</h1>
+        <div class="navbuttons">
+            <button class="navbutton" onclick="location.href='{{ url_for('home') }}'">Home</button>
+            <button class="navbutton" onclick="location.href='{{ url_for('learn') }}'">Learn</button>
+            <button class="navbutton" onclick="location.href='{{ url_for('about') }}'">About</button>
+        </div>
+    </div>
+
+    {% block abovespacer %}
+    {% endblock %}
+    <div style="height: 8rem;"></div>
+    {% block content %}
+    {% endblock %}
+
+    <script>
+        const dropdown = document.getElementById("dropdownframe");
+        const dropOpen = document.getElementById("drop-open");
+        const dropClose = document.getElementById("drop-close");
+
+        function toggleDropdown() {
+            if (dropdown.style.opacity === '1') {
+                dropdown.style.pointerEvents = "none";
+                dropdown.style.opacity = "0";
+            } else {
+                dropdown.style.opacity = "1";
+                dropdown.style.pointerEvents = "all";
+            }
+        }
+
+        dropOpen.addEventListener("click", toggleDropdown);
+        dropClose.addEventListener("click", toggleDropdown);
+    </script>
+</body>
+
+</html>

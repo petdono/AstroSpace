@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='markstyles.css') }}">
+{% endblock %}
+{% block title %}astrospace - {{ meta.title or "Untitled Page" }}{% endblock %}
+{% block content %}
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Markdown Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='syntax.css') }}">
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/html.min.js"></script>
+
+    <h1 style="width: calc(100% - 2rem); text-align: center;">{{ meta.title }}</h1>
+    <p style="width: calc(100% - 2rem); text-align: center;"><em>By {{ meta.author }}</em></p>
+    <script>hljs.highlightAll();</script>
+    <div class="centered">
+    <div class="panel" style="text-align: left; justify-content: left; align-items: left;">{{ content|safe }}</div>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

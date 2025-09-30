@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block head %}{% endblock %}
+{% block title %}astrospace - home{% endblock %}
+
+{% block abovespacer %}
+<script src="{{ url_for('static', filename='particles.js') }}"></script>
+<script>
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    particlesJS.load('particles-js', 'static/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+<div id="particles-js" style="width: 100%; height: 100%;"></div>
+{% endblock %}
+
+{% block content %}
+<div class="centered">
+    <div class="panel">
+        <h1 class="astrotext mainhead">What's <b style="color: #FF3F00;">astro</b>space?</h1>
+        <h2>astrospace is a learning hub for web programming and development. astrospace's tutorials cover a wide range of topics, from simple programming concepts to building a fully functional website with HTML, CSS, and JavaScript.</h2>
+    </div>
+    <div class="panel">
+        <h1 class="astrotext">Contributors</h1>
+        <h2>Noah Peterson</h2>
+        <h2>Jackson Altic</h2>
+    </div>
+</div>
+{% endblock %}
