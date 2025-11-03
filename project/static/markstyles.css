@@ -60,3 +60,16 @@ ul {
     padding-left: 2rem;
     margin-bottom: 1rem;
 }
+
+blockquote {
+    background-color: rgb(255, 255, 255, 0.1);
+    border-left: 4px solid grey;
+    padding: 0.1rem 1ch;
+    border-radius: 0 0.75rem 0.75rem 0;
+}
+
+blockquote blockquote {
+    margin-left: 0.1rem;
+    margin-right: 0.5rem;
+    border-radius: 0 0.325rem 0.325rem 0;
+}

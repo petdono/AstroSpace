@@ -2,12 +2,11 @@
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='markstyles.css') }}">
 {% endblock %}
-{% block title %}astrospace - {{ meta.title or "Untitled Page" }}{% endblock %}
+{% block title %}astrospace - LH:{{ meta.title or "NO_TITLE" }}{% endblock %}
 {% block content %}
 
 <!doctype html>
 <html>
-
 <head>
     <title>Markdown Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='syntax.css') }}">
@@ -20,7 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/html.min.js"></script>
 
     <h1 style="width: calc(100% - 2rem); text-align: center;">{{ meta.title }}</h1>
-    <p style="width: calc(100% - 2rem); text-align: center;"><em>By {{ meta.author }}</em></p>
+    <p style="width: calc(100% - 2rem); text-align: center;"><em>By {{ meta.author }}, {{ meta.date }}</em></p>
     <script>hljs.highlightAll();</script>
     <div class="centered">
     <div class="panel" style="text-align: left; justify-content: left; align-items: left;">{{ content|safe }}</div>

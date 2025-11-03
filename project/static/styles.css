@@ -30,8 +30,7 @@ p {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
+    font-variation-settings: "wdth" 100;
 }
 
 #particles-js canvas {
@@ -150,7 +149,7 @@ p {
     }
 }
 
-button {
+.navbutton {
     align-items: center;
     background-color: transparent;
     color: #fff;
@@ -167,7 +166,7 @@ button {
     padding: 1rem;
 }
 
-button:before {
+.navbutton:before {
     background-color: #fff;
     content: "";
     display: inline-block;
@@ -177,7 +176,16 @@ button:before {
     width: 0;
 }
 
-button:hover:before {
+.navbutton:hover:before {
     background-color: var(--astro-orange);
     width: 3rem;
+}
+
+.mini {
+    cursor: pointer;
+    background-color: var(--astro-orange);
+    border-radius: 8px;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem;
 }

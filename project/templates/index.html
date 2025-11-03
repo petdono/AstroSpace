@@ -17,6 +17,10 @@
 <div class="centered">
     <div class="panel">
         <h1 class="astrotext mainhead">Welcome to <b style="color: #FF3F00;">astro</b>space</h1>
+        {% if current_user.is_authenticated %}
+        <p>Hi {{ current_user.name }}.</p>
+        <p>You are currently </p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

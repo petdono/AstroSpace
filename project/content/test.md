@@ -4,16 +4,21 @@ author: The astrospace Team
 date: 2025-09-29
 tags: [html, css, javascript]
 description: A test.
+check: [<h1>, <p>]
+next: advanced-design
+prepaste: example.html
 ---
 
 # Mistune Feature Showcase
 
 This document demonstrates *every* supported Markdown feature.  
-It’s intended as a reference for testing your Mistune + Flask setup.
+It’s intended as a reference to show how every markdown feature shows up on astrospace.
 
 ---
 
 ## Headings
+
+`<h1 style="color:red; font-family: 'Comic Sans MS'">Custom HTML</h1>`
 
 # H1 Heading
 ## H2 Heading

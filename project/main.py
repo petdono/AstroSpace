@@ -1,9 +1,15 @@
 from flask import Flask, render_template, abort
+from mistune import HTMLRenderer
 import mistune
 import os
 import yaml
 
+
 app = Flask(__name__)
+
+class MyRenderer(HTMLRenderer):
+    def codespan(self, text):
+        return text
 
 markdown = mistune.create_markdown(
     plugins=[
@@ -20,7 +26,8 @@ markdown = mistune.create_markdown(
         'superscript',
         'subscript',
         'insert'
-    ]
+    ],
+    renderer=MyRenderer()
 )
 
 CONTENT_DIR = "content"
